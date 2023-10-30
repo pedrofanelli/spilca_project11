@@ -4,7 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import processors.LoginProcessor;
 
 @Controller
 public class LoginController {
@@ -16,11 +17,12 @@ public class LoginController {
 	
 	@PostMapping("/")
 	public String loginPost(
-			@RequestParam String username,
-			@RequestParam String password,
+			//@RequestParam String username,
+			//@RequestParam String password,
+			LoginProcessor lp,
 			Model model) {
 		
-		boolean loggedIn = false;
+		boolean loggedIn = lp.login();
 		
 		if (loggedIn) {
 			model.addAttribute("message", "You are now logged in.");

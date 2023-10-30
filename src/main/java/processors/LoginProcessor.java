@@ -11,7 +11,14 @@ public class LoginProcessor {
 	private String password;
 	
 	public boolean login() {
+		String username = this.getUsername();
+		String password = this.getPassword();
 		
+		if ("natalie".equals(username) && "pass".equals(password)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public String getUsername() {
