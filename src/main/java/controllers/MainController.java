@@ -34,7 +34,10 @@ public class MainController {
     if (username == null) {                                      
       return "redirect:/"; // to login
     }
+    
+    int count = loginCountService.getCount();
  
+    model.addAttribute("loginCount", count);
     model.addAttribute("username", username);
     return "main.html";                                          
   }
