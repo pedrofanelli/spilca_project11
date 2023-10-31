@@ -35,6 +35,7 @@ public class MainController {
       return "redirect:/"; // to login
     }
     
+    System.out.println("login count service antes de obtener resultado: "+loginCountService);
     int count = loginCountService.getCount();
  
     model.addAttribute("loginCount", count);

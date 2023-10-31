@@ -24,7 +24,7 @@ public class LoginProcessor {
 	}
 	
 	public boolean login() {
-		loginCountService.increment();
+		
 		
 		String username = this.getUsername();
 		String password = this.getPassword();
@@ -32,6 +32,10 @@ public class LoginProcessor {
 		boolean loginResult = false;
 		if ("natalie".equals(username) && "pass".equals(password)) {
 			this.loggedUserManagementService.setUsername(username);
+			
+			System.out.println("LOGIN COUNT SERVICE antes de incrementar: "+loginCountService);
+			loginCountService.increment();
+			
 			return true;
 		} 
 		return loginResult;

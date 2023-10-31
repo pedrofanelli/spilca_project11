@@ -27,7 +27,7 @@ public class LoginController {
 			@RequestParam String username,
 			@RequestParam String password,
 			Model model) {
-		System.out.println(lp);
+		System.out.println("REQUEST SCOPE LoginProcessor: "+lp);
 		lp.setUsername(username);
 		lp.setPassword(password);
 		boolean loggedIn = lp.login();
