@@ -6,14 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import services.LoggedUserManagementService;
+import services.LoginCountService;
 
 @Controller
 public class MainController {
 
 	private final LoggedUserManagementService loggedUserManagementService;
+	private final LoginCountService loginCountService;
 	
-	public MainController(LoggedUserManagementService loggedUserManagementService) {
+	public MainController(LoggedUserManagementService loggedUserManagementService,
+			LoginCountService loginCountService) {
 		this.loggedUserManagementService = loggedUserManagementService;
+		this.loginCountService = loginCountService;
 	}
 	
 	@GetMapping("/main")
